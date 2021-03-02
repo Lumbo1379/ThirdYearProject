@@ -1,6 +1,4 @@
-﻿using Firebase.Auth;
-using Google;
-using Proyecto26;
+﻿using Proyecto26;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +10,7 @@ public class SignInController : MonoBehaviour
 {
     [SerializeField] private TMP_InputField _emailInput;
     [SerializeField] private TMP_InputField _passwordInput;
+    [SerializeField] private ParticleSystem _successEffect;
 
     public SignResponse LoginDetails { get; set; }
 
@@ -36,6 +35,7 @@ public class SignInController : MonoBehaviour
             response =>
             {
                 LoginDetails = response;
+                _successEffect.Play();
                 Debug.Log("Signed in successfully!");
             }).Catch(Debug.Log);
     }
