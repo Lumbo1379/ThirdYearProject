@@ -17,7 +17,7 @@ public class Uid
 [Serializable]
 public class Fields
 {
-    public Score score;
+    public ArrayValue scores;
     public Uid uid;
 }
 
@@ -25,5 +25,23 @@ public class Fields
 public class Document
 {
     public Fields fields;
+}
+
+[Serializable]
+public class ArrayValue
+{
+    public Values arrayValue;
+}
+
+[Serializable]
+public class Values
+{
+    public DoubleValue[] values;
+}
+
+[Serializable]
+public class DoubleValue
+{
+    public double doubleValue;
 }
 
